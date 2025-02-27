@@ -250,6 +250,7 @@
 		interrupt-parent = <&gic>;
 		interrupts = <0 95 1 0 96 4 0 93 4 0 94 4>;
 		local-mac-address = [00 0a 35 00 00 00];
+		max-speed = <0x3e8>;
 		phy-mode = "rgmii-id";
 		reg = <0x0 0x80080000 0x0 0x40000>;
 		xlnx = <0x0>;
@@ -316,6 +317,7 @@
 		interrupt-parent = <&gic>;
 		interrupts = <0 89 1 0 90 4 0 91 4 0 92 4>;
 		local-mac-address = [00 0a 35 00 00 01];
+		max-speed = <0x3e8>;
 		phy-mode = "rgmii-id";
 		reg = <0x0 0x80040000 0x0 0x40000>;
 		xlnx = <0x0>;
