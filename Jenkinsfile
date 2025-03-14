@@ -11,7 +11,7 @@ pipeline {
         label 'Build_Master'
     }
     environment {
-        deploy_branch="master"
+        deploy_branch="main"
         tool_release="2024.1"
         tool_build="daily_latest"
         auto_branch="2022.1"
@@ -38,14 +38,14 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '20'))
     }
     triggers {
-        cron(env.BRANCH_NAME == 'master' ? 'H 21 * * *' : '')
+        cron(env.BRANCH_NAME == 'main' ? 'H 21 * * *' : '')
     }
     stages {
         stage('Tests Started') {
             steps {
                 script {
-                    echo "github_repo_resolved:${env.GITHUB_REPO}" 
-                    echo "FOLDER_NAME: ${env.FOLDER}"    
+                    echo "github_repo_resolved:${env.GITHUB_REPO}"
+                    echo "FOLDER_NAME: ${env.FOLDER}"
                     echo "REDIRECT_URL: ${env.REDIRECT_URL}"
                     echo "JOB_NAME: ${env.JOB_NAME}"
                     echo "JOB_BASE_NAME: ${env.JOB_BASE_NAME}"
@@ -486,7 +486,7 @@ pipeline {
         }
     }
     post {
-        always {           
+        always {
             script {
                 try {
                     def comment
